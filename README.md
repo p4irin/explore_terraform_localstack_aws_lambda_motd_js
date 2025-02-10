@@ -173,3 +173,4 @@ $ localstack stop
 
 * [Resource: aws_lambda_function](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function)
 * [Resource: aws_lambda_function_url](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function_url)
+* [node.js](https://nodejs.org/en)
