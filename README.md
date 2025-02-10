@@ -141,4 +141,35 @@ $ localstack stop
 
 ## Terraform
 
+Refer to the `*.tf` files.
+
+The order in which the resources are created conforms to the general steps. The function url resource references the lambda function resource. The lambda function resource is created first.
+
+Init, plan and apply
+
+```bash
+$ localstack start
 ...
+$ terraform init
+...
+$ terraform plan
+...
+$ terraform apply
+...
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+function_url = "http://g8087feutw6diucqs5cvtq8l2svytrux.lambda-url.us-east-1.localhost.localstack.cloud:4566/"
+```
+
+An output variable shows the function url to use to trigger the lambda function.
+
+```bash
+$ localstack stop
+```
+
+## References
+
+* [Resource: aws_lambda_function](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function)
+* [Resource: aws_lambda_function_url](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function_url)
