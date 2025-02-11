@@ -143,7 +143,11 @@ $ localstack stop
 
 Refer to the `*.tf` files.
 
-The order in which the resources are created conforms to the general steps. The function url resource references the lambda function resource. The lambda function resource is created first.
+The data source `archive_file` generates the zip file with the code. It will overwrite if it exists.
+
+If you modify the code the `source_code_hash` attribute of the `aws_lambda_function` resource changes. If it is different than what is deployed, Terraform wil update the lambda function in place.
+
+The order in which the resources are created conforms to the general steps. The function url resource references the lambda function resource. The lambda function resource is created first. The code archive file will be available.
 
 Init, plan and apply
 
