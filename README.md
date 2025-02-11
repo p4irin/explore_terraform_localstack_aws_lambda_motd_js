@@ -116,7 +116,7 @@ $ aws --profile localstack lambda create-function-url-config \
 Use the url in `"FunctionUrl"` with curl to send a POST to that endpoint to trigger the lambda function.
 
 ```bash
-$ function_url=$(aws --profile localstack lambda get-function-url-config --function-name motd|jq .FunctionUrl|sed 's/^"//;s/"$//')
+$ function_url=$(aws --profile localstack lambda get-function-url-config --function-name motd|jq -r .FunctionUrl)
 ```
 
 ```bash
