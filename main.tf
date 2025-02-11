@@ -1,3 +1,9 @@
+data "archive_file" "lambda_motd" {
+  type = "zip"
+  source_file = "${path.module}/index.js"
+  output_path = "${path.module}/motd.zip"
+}
+
 resource "aws_lambda_function" "motd" {
     filename = "motd.zip"
     function_name = "motd"
